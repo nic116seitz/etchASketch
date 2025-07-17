@@ -1,0 +1,28 @@
+* {
+   background-color: tan;
+}
+
+.etchSquare {
+  display: flex;
+  background: lightblue;
+  width: 43.75px;
+  height: 43.75px;
+  border: none;
+
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#sketchSpace {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+  width: 700px;
+  height: 700px;
+}
+
+
