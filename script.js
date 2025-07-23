@@ -1,27 +1,20 @@
-const container = document.querySelector("#sketchSpace");
-const newSquare = document.createElement("div");
+const drawspace = document.querySelector("#sketchSpace");
 
+let usrDimension = 16;
 
-newSquare.className = "etchSquare";
+function gridGen(dimension) {
+ for (row = 0; row < dimension; row++) {
+    for(column = 0; column < dimension; column++) {
+      const etched = document.createElement("div");
+      etched.classList.add(".etchSquare");
+      drawspace.appendChild(etched)
+    }
+  }
+}
 
-container.appendChild(newSquare)
-container.appendChild(newSquare.cloneNode(true))
-container.appendChild(newSquare.cloneNode(true))
-container.appendChild(newSquare.cloneNode(true))
-container.appendChild(newSquare.cloneNode(true))
-container.appendChild(newSquare.cloneNode(true))
-container.appendChild(newSquare.cloneNode(true))
-container.appendChild(newSquare.cloneNode(true))
-container.appendChild(newSquare.cloneNode(true))
-container.appendChild(newSquare.cloneNode(true))
-container.appendChild(newSquare.cloneNode(true))
-container.appendChild(newSquare.cloneNode(true))
-container.appendChild(newSquare.cloneNode(true))
+function randomColor(){
+  return newColor = (Math.random() * 255) + 1
+}
+gridGen(16);
 
-container.addEventListener("mouseover", () => {
-  newSquare.style.backgroundColor = "lightblue"
-  newSquare.style.borderWidth = "5px"
-  newSquare.style.borderColor = "darkblue"
-
-
-})
+console.log(gridGen(usrDimension))
