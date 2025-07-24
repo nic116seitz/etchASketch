@@ -5,10 +5,11 @@
 
 .etchSquare {
   display: flex;
+  width: 43.75px;
+  height: 43.75px;
   flex-wrap: wrap;
   background-color: white;
   border: darkblue 3px;
-  gap: 0px;
 
 }
 

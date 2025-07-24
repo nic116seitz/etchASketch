@@ -13,8 +13,15 @@ function gridGen(dimension) {
 }
 
 function randomColor(){
-  return newColor = (Math.random() * 255) + 1
+  const hexLetters = "0123456789ABCDEF";
+  let color = "#";
+  for (var i = 0; i < 6; i++) {
+    color += hexLetters[Math.floor(Math.random() * 16)];
+  }
+  return color;
 }
-gridGen(16);
 
-console.log(gridGen(usrDimension))
+gridGen(usrDimension);
+
+console.log("This is a random Color: " + randomColor())
+
