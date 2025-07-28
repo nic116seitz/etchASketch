@@ -7,8 +7,10 @@
   display: flex;
   flex-wrap: wrap;
   background-color: white;
+  border: solid;
   border-width: 1px;
   border-color: black;
+  gap: 0.25px;
 }
 
 body {
