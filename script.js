@@ -1,22 +1,27 @@
 const drawspace = document.querySelector("#sketchSpace");
-const square = document.querySelector(".etchSquare")
 let squareNum = 0;
 
 let usrDimension = 16;
 
 
-function gridGen(dimension) {
+function gridGen(dimension = usrDimension) {
  for (row = 0; row < dimension; row++) {
-    for(column = 0; column < dimension; column++) {
       const etched = document.createElement("div");
-      etched.classList.add(".etchSquare");
-      etched.setAttribute("id", `square${squareNum}`);
-      drawspace.appendChild(etched)
-      squareNum++
-    }
-  }
-}
+      etched.classList.add("etchSquare");
+      drawspace.appendChild(etched);
+  };
+ styleSquares();
+};
 
+function styleSquares() {
+const square = document.querySelector(".etchSquare");
+square.style.width = `${700 / usrDimension}px`
+square.style.height = `${700 / usrDimension}px`
+square.style.borderWidth = "3px"
+square.style.bordeColor = "black"
+square.style.border = "solid"
+drawspace.appendChild(square)
+};
 
 function randomColor(){
   const hexLetters = "0123456789ABCDEF";
@@ -28,8 +33,7 @@ function randomColor(){
 }
 
 // square.addEventListener("hover", )
-
-gridGen(usrDimension);
+gridGen();
 
 console.log("This is a random Color: " + randomColor())
 
