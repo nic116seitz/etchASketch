@@ -7,7 +7,8 @@
   display: flex;
   flex-wrap: wrap;
   background-color: white;
-
+  border-width: 1px;
+  border-color: black;
 }
 
 body {
