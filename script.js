@@ -4,23 +4,30 @@ let squareNum = 0;
 let usrDimension = 16;
 
 function gridGen(dimension) {
- for (row = 0; row < dimension; row++) {
-  for (column = 0; column < dimension; column++) {
+ for (squares = 0; squares < dimension * dimension; squares++) {
    const etched = document.createElement("div");
+   etched.setAttribute("id", `squareNum${squareNum}`);
    etched.classList.add("etchSquare");
    drawspace.appendChild(etched);
-   const square = document.querySelector(".etchSquare");
-   square.style.width = `${644 / usrDimension}px`;
-   square.style.height = `${644 / usrDimension}px`;
-   square.style.display = "flex";
-   square.style.flexWrap = "wrap";
-   square.setAttribute("id", `squareNum${squareNum}`)
-   drawspace.appendChild(square);
-   squareNum++
-   };
-  };
+   etched.style.width = `${671 / usrDimension}px`;
+   etched.style.height = `${671 / usrDimension}px`;
+   drawspace.appendChild(etched)
+ };
+// styleSquare()
 };
- 
+
+// function styleSquare(){ 
+// const square = document.querySelectorAll(".etchSquare");
+//  square.forEach((sqr) =>
+//   square.style.width = `${645 / usrDimension}px`;
+//   square.style.height = `${645 / usrDimension}px`;
+//   square.style.display = "flex";
+//   square.style.flexWrap = "wrap";
+//   square.setAttribute("id", `squareNum${squareNum}`)
+//   drawspace.appendChild(square);
+//   });
+// };
+
 function randomColor(){
   const hexLetters = "0123456789ABCDEF";
   let color = "#";
