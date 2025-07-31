@@ -9,8 +9,8 @@ function gridGen(dimension) {
    etched.setAttribute("id", `squareNum${squareNum}`);
    etched.classList.add("etchSquare");
    drawspace.appendChild(etched);
-   etched.style.width = `${671 / usrDimension}px`;
-   etched.style.height = `${671 / usrDimension}px`;
+   etched.style.width = `${668 / usrDimension}px`;
+   etched.style.height = `${668 / usrDimension}px`;
    drawspace.appendChild(etched)
  };
 // styleSquare()
