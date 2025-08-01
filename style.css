@@ -31,4 +31,13 @@ body {
 
 }
 
-
+#changeGrid {
+  display: flex;
+  margin-top: 10px;
+  box-shadow: none;
+  font-weight: bold;
+  font-size: 24px;
+  background-color: transparent;
+  border: solid 5px black;
+  border-radius: 10px;
+}
