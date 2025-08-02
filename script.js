@@ -22,7 +22,6 @@ function attachListener(){
  square.forEach((sqr) => {
   sqr.addEventListener("mouseover", (event) => {
     const itmId = event.target.id;
-    console.log(itmId);
     colorSquare(itmId);
   });
  });
@@ -30,7 +29,6 @@ function attachListener(){
 
 function colorSquare(id) {
 const slctdSqr = document.querySelector(`#${id}`);
-    console.log(slctdSqr);
     slctdSqr.style.backgroundColor = "" + randomColor();
 };
 
@@ -46,6 +44,5 @@ function randomColor(){
 // square.addEventListener("hover", )
 gridGen(usrDimension);
 
-console.log("This is a random Color: " + randomColor())
 
 
