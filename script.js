@@ -12,21 +12,27 @@ function gridGen(dimension) {
    etched.style.width = `${668 / usrDimension}px`;
    etched.style.height = `${668 / usrDimension}px`;
    drawspace.appendChild(etched)
+   squareNum++
  };
-// styleSquare()
+attachListener();
 };
 
-// function styleSquare(){ 
-// const square = document.querySelectorAll(".etchSquare");
-//  square.forEach((sqr) =>
-//   square.style.width = `${645 / usrDimension}px`;
-//   square.style.height = `${645 / usrDimension}px`;
-//   square.style.display = "flex";
-//   square.style.flexWrap = "wrap";
-//   square.setAttribute("id", `squareNum${squareNum}`)
-//   drawspace.appendChild(square);
-//   });
-// };
+function attachListener(){ 
+ const square = document.querySelectorAll(".etchSquare");
+ square.forEach((sqr) => {
+  sqr.addEventListener("mouseover", (event) => {
+    const itmId = event.target.id;
+    console.log(itmId);
+    colorSquare(itmId);
+  });
+ });
+};
+
+function colorSquare(id) {
+const slctdSqr = document.querySelector(`#${id}`);
+    console.log(slctdSqr);
+    slctdSqr.style.backgroundColor = "" + randomColor();
+};
 
 function randomColor(){
   const hexLetters = "0123456789ABCDEF";
@@ -35,10 +41,11 @@ function randomColor(){
     color += hexLetters[Math.floor(Math.random() * 16)];
   }
   return color;
-}
+};
 
 // square.addEventListener("hover", )
 gridGen(usrDimension);
 
 console.log("This is a random Color: " + randomColor())
+
 
