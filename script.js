@@ -14,7 +14,7 @@ function gridGen(dimension) {
    drawspace.appendChild(etched)
    squareNum++
  };
-attachListener();
+attachListener(), buttonlistener(), resetListener();
 };
 
 function attachListener(){ 
@@ -22,14 +22,14 @@ function attachListener(){
  square.forEach((sqr) => {
   sqr.addEventListener("mouseover", (event) => {
     const itmId = event.target.id;
-    colorSquare(itmId);
+    colorSquare(itmId, randomColor());
   });
  });
 };
 
-function colorSquare(id) {
+function colorSquare(id, color) {
 const slctdSqr = document.querySelector(`#${id}`);
-    slctdSqr.style.backgroundColor = "" + randomColor();
+    slctdSqr.style.backgroundColor = "" + color;
 };
 
 function randomColor(){
@@ -41,7 +41,33 @@ function randomColor(){
   return color;
 };
 
-// square.addEventListener("hover", )
+function resetFunction() { 
+  const square = document.querySelectorAll(".etchSquare");
+  square.forEach((sqr) => {
+    const allIds = sqr.id;
+    console.log(allIds)
+    colorSquare(allIds, "white"); 
+    drawspace.appendChild(sqr);
+  });
+};
+
+function buttonlistener() {
+  const changeGrid = document.querySelector("#changeGrid");
+  changeGrid.addEventListener("click", () => {
+    usrDimension = prompt("Select a dimension for your new Grid: ") 
+    resetFunction(),
+    gridGen(usrDimension);
+  });
+};
+
+
+function resetListener() {
+  const reset = document.querySelector("#reset");
+  const menu = document.querySelector("#menu")
+  reset.addEventListener("click", resetFunction);
+  menu.appendChild(reset)
+};
+
 gridGen(usrDimension);
 
 
