@@ -5,11 +5,12 @@
 
 .etchSquare {
   display: flex;
-  flex-wrap: wrap;
   background-color: white;
   border: solid;
   border-width: 1px;
   border-color: black;
+  margin: 1px;
+  box-sizing: border-box;
 }
 
 body {
@@ -19,8 +20,7 @@ body {
 }
 
 #sketchSpace {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   background-color: white;
   width: 700px;
   height: 700px;

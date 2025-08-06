@@ -5,17 +5,20 @@ let usrDimension = 16;
 
 
 function gridGen(dimension) {
- for (squares = 0; squares < dimension * dimension; squares++) {
-   const etched = document.createElement("div");
-   etched.setAttribute("id", `squareNum${squareNum}`);
-   etched.classList.add("etchSquare");
-   drawspace.appendChild(etched);
-   etched.style.width = `${668 / dimension}px`;
-   etched.style.height = `${668 / dimension}px`;
-   drawspace.appendChild(etched)
-   squareNum++
- };
-attachListener(), buttonlistener(), resetListener();
+  drawspace.innerHTML = "";
+
+  drawspace.style.gridTemplateColumns = `repeat(${dimension}), 1fr)`
+  drawspace.style.gridTemplateRows = `repeat(${dimension}, 1fr)`
+
+ for (let i = 0; i < dimension * dimension; i++) {
+    const etched = document.createElement("div");
+    etched.setAttribute("id", `squareNum${squareNum}`);
+    etched.classList.add("etchSquare");
+  }; 
+
+  attachListener(),
+  buttonlistener(),
+  resetListener();
 };
 
 function attachListener(){ 
