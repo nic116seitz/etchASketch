@@ -3,14 +3,15 @@ let squareNum = 0;
 
 let usrDimension = 16;
 
+
 function gridGen(dimension) {
  for (squares = 0; squares < dimension * dimension; squares++) {
    const etched = document.createElement("div");
    etched.setAttribute("id", `squareNum${squareNum}`);
    etched.classList.add("etchSquare");
    drawspace.appendChild(etched);
-   etched.style.width = `${668 / usrDimension}px`;
-   etched.style.height = `${668 / usrDimension}px`;
+   etched.style.width = `${668 / dimension}px`;
+   etched.style.height = `${668 / dimension}px`;
    drawspace.appendChild(etched)
    squareNum++
  };
@@ -18,8 +19,8 @@ attachListener(), buttonlistener(), resetListener();
 };
 
 function attachListener(){ 
- const square = document.querySelectorAll(".etchSquare");
- square.forEach((sqr) => {
+ const squareAll0 = document.querySelectorAll(".etchSquare");
+ squareAll0.forEach((sqr) => {
   sqr.addEventListener("mouseover", (event) => {
     const itmId = event.target.id;
     colorSquare(itmId, randomColor());
@@ -42,8 +43,8 @@ function randomColor(){
 };
 
 function resetFunction() { 
-  const square = document.querySelectorAll(".etchSquare");
-  square.forEach((sqr) => {
+  const squareAll1 = document.querySelectorAll(".etchSquare");
+  squareAll1.forEach((sqr) => {
     const allIds = sqr.id;
     console.log(allIds)
     colorSquare(allIds, "white"); 
@@ -52,11 +53,14 @@ function resetFunction() {
 };
 
 function buttonlistener() {
+  const squareAll2 = document.querySelectorAll(".etchSquare");
   const changeGrid = document.querySelector("#changeGrid");
   changeGrid.addEventListener("click", () => {
-    usrDimension = prompt("Select a dimension for your new Grid: ") 
-    resetFunction(),
-    gridGen(usrDimension);
+    const usrinput = parseInt(prompt("Select a dimension for your new Grid: ")); 
+    squareAll2.forEach((drawSqr) => {
+      drawSqr.remove()
+    });
+    gridGen(usrinput);
   });
 };
 
